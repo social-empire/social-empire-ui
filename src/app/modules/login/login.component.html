@@ -1,0 +1,56 @@
+<div class="login__container">
+  <h2 class="login__title">Рады Видеть Вас!</h2>
+
+  <span class="login__subtitle">Войти в аккаунт Social Empire</span>
+
+  <form class="login__form">
+    <div class="login__form-inputs">
+      <!-- Первое поле для почты или логина -->
+      <div class="login__form-inputs_input">
+        <span class="login__form-inputs_input-icon">
+          <i class="bx bx-user"></i>
+        </span>
+
+        <input required type="text" placeholder="Почта / Логин" />
+      </div>
+
+      <!-- Второе поле для пароля -->
+      <div class="login__form-inputs_input">
+        <span class="login__form-inputs_input-icon">
+          <i class="bx bx-lock-open"></i>
+        </span>
+
+        <input required type="password" placeholder="Пароль" />
+      </div>
+    </div>
+
+    <div class="login__form-wrapper">
+      <div class="login__form-wrapper_checkbox">
+        <label class="checkbox path" for="checkbox">
+          <input type="checkbox" id="checkbox" />
+          <svg viewBox="0 0 21 21">
+            <path
+              d="M5,10.75 L8.5,14.25 L19.4,2.3 C18.8333333,1.43333333 18.0333333,1 17,1 L4,1 C2.35,1 1,2.35 1,4 L1,17 C1,18.65 2.35,20 4,20 L17,20 C18.65,20 20,18.65 20,17 L20,7.99769186"
+            ></path>
+          </svg>
+          Запомнить
+        </label>
+      </div>
+
+      <div class="login__form-wrapper_reset-password">
+        <!-- TODO: Заменить ссылку по роутингу -->
+        <a routerLink="#" target="_blank">Забыли пароль?</a>
+      </div>
+    </div>
+
+    <div class="login__form-login">
+      <button class="login__form-login_btn">Войти в аккаунт</button>
+    </div>
+
+    <div class="login__form-register">
+      <!-- TODO: Заменить ссылку по роутингу -->
+      <a routerLink="#" class="login__form-register_btn">Зарегистрироваться</a>
+    </div>
+  </form>
+</div>
+
