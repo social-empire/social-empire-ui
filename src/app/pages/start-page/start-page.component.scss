@@ -1,0 +1,131 @@
+// Стили для страницы "Start-page"
+.start-page {
+  margin: 0;
+  color: var(--white-color);
+
+  &__container {
+    position: relative;
+    background-image: url('../../../assets/start-page-bg.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    height: 100vh;
+    padding-top: 2.5rem;
+  }
+
+  &__wrapper {
+    width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &__logo {
+    margin-left: auto;
+    margin-right: auto;
+    width: 12.5rem;
+    height: 6.25rem;
+    margin-bottom: var(--mb-40);
+    transition: 0.3s ease-in-out;
+
+    &:hover {
+      transform: scale(calc(100% + 5%));
+    }
+  }
+
+  &__content {
+    max-width: 61.563rem;
+    display: flex;
+    margin-right: auto;
+    margin-left: auto;
+
+    &-left-side {
+      flex: 50%;
+      padding: 4.375rem 3.125rem;
+      background-color: rgba(133, 38, 227, 0.8);
+
+      &_title {
+        font-weight: var(--font-bold);
+        font-size: var(--h2-font-size);
+        margin-bottom: var(--mb-32);
+      }
+
+      &_description {
+        font-size: var(--smaller-font-size);
+        font-weight: var(--font-light);
+        line-height: 1.375rem;
+        margin-bottom: var(--mb-32);
+      }
+
+      &_cards {
+        max-width: 21.875rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        row-gap: 2.5rem;
+
+        &-card {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          column-gap: 1.25rem;
+
+          &_logo {
+            background-color: var(--white-color);
+            padding: 0.75rem;
+            border-radius: 0.75rem;
+
+            i {
+              display: block;
+              font-size: 1.5rem;
+              color: var(--accent-color);
+              transition: 0.3s ease-in-out;
+
+              &:hover {
+                transform: translateY(-0.125rem);
+              }
+            }
+          }
+
+          &_info {
+            &-title {
+              cursor: default;
+              font-weight: var(--font-bold);
+              margin-bottom: var(--mb-4);
+              text-transform: uppercase;
+            }
+
+            &-description {
+              font-weight: var(--font-light);
+              font-size: var(--small-font-size);
+            }
+          }
+        }
+      }
+    }
+
+    &-right-side {
+      flex: 50%;
+      padding: 4.375rem 3.125rem;
+      color: var(--black-color);
+      background-color: var(--white-color);
+    }
+  }
+
+  &__info {
+    margin-top: var(--mb-48);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 1.25rem;
+
+    &-link {
+      font-weight: var(--font-light);
+      transition: 0.3s ease-in-out;
+
+      &:hover {
+        color: var(--grey-color-light);
+      }
+    }
+  }
+}
