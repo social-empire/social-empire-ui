@@ -1,0 +1,119 @@
+{
+  "root": true,
+  "ignorePatterns": ["projects/**/*"],
+  "overrides": [
+    {
+      "files": ["*.ts"],
+      "parseOptions": {
+        "project": ["tsconfig.json", "e2e/tsconfig.json"],
+        "createDefaultProgram": true
+      },
+      "extends": [
+        "plugin:@angular-eslint/ng-cli-compat",
+        "plugin:@angular-eslint/ng-cli-compat--formatting-add-on",
+        "plugin:@angular-eslint/recommended",
+        "plugin:@angular-eslint/template/process-inline-templates"
+      ],
+      "plugins": ["eslint-plugin-rxjs"],
+      "rules": {
+        "no-underscore-dangle": "off",
+        "@angular-eslint/component-selector": [
+          "error",
+          {
+            "type": "element",
+            "prefix": "social-empire",
+            "style": "kebab-case"
+          }
+        ],
+        "@angular-eslint/directive-selector": [
+          "error",
+          {
+            "type": "attribute",
+            "prefix": "social-empire",
+            "style": "camelCase"
+          }
+        ],
+        "@angular-eslint/no-pipe-impure": "error",
+        "@angular-eslint/prefer-output-readonly": "error",
+        "@angular-eslint/use-component-selector": "error",
+        "@angular-eslint/use-component-view-encapsulation": "error",
+        "@typescript-eslint/explicit-member-accessibility": [
+          "off",
+          {
+            "accessibility": "explicit"
+          }
+        ],
+        "arrow-parens": ["off", "always"],
+        "import/order": "error",
+        "rxjs/no-unsafe-takeuntil": [
+          "error",
+          {
+            "allow": [
+              "count",
+              "defaultIfEmpty",
+              "endWith",
+              "every",
+              "finalize",
+              "finally",
+              "isEmpty",
+              "last",
+              "max",
+              "min",
+              "publish",
+              "publishBehavior",
+              "publishLast",
+              "publishReplay",
+              "reduce",
+              "share",
+              "shareReplay",
+              "skipLast",
+              "takeLast",
+              "throwIfEmpty",
+              "toArray"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "files": ["*.component.ts"],
+      "extends": ["plugin:@angular-eslint/template/process-inline-templates"],
+      "rules": {
+        "@angular-eslint/use-component-view-encapsulation": "off"
+      }
+    },
+    {
+      "files": ["*.html"],
+      "extends": ["plugin:@angular-eslint/template/recommended"],
+      "rules": {
+        "@angular-eslint/template/cyclomatic-complexity": [
+          "warn",
+          {
+            "maxComplexity": 6
+          }
+        ]
+      }
+    },
+    {
+      "filex": ["*.spec.ts", "*.d.ts"],
+      "parseOptions": {
+        "project": "tsconfig.spec.json"
+      },
+      "extends": ["plugin:jasmine/recommended"],
+      "plugins": ["jasmine"],
+      "env": { "jasmine": true }
+    }
+  ],
+
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": "standard-with-typescript",
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "rules": {}
+}
+
