@@ -18,12 +18,23 @@
     "importHelpers": true,
     "target": "es2020",
     "module": "es2020",
-    "lib": ["es2020", "dom"]
+    "lib": ["es2020", "dom"],
+    "typeRoots": ["node_modules/@types"]
+  },
+  "paths": {
+    "@core/*": ["src/app/core/*"],
+    "@modules/*": ["src/app/modules/*"],
+    "@shared/*": ["src/app/shared/*"],
+    "@pages/*": ["src/app/pages/*"],
+    "@app/*": ["src/app/*"],
+    "@env/*": ["src/environments/*"]
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,
-    "strictTemplates": true
+    "strictTemplates": true,
+    "fullTemplateTypeCheck": true
   }
 }
+

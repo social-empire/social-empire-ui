@@ -4,12 +4,12 @@
 /dist
 /tmp
 /out-tsc
+
+# Only exists if Bazel was running
 /bazel-out
 
 # Node
 /node_modules
-npm-debug.log
-yarn-error.log
 
 # IDEs and editors
 .idea/
@@ -33,6 +33,8 @@ yarn-error.log
 .sass-cache/
 /connect.lock
 /coverage
+npm-debug.log
+yarn-error.log
 /libpeerconnection.log
 testem.log
 /typings
