@@ -1,0 +1,53 @@
+// Адаптация страниц
+// Для маленьких девайсов
+@media screen and (max-width: 359px) {
+  body {
+    width: 320px;
+    overflow-x: hidden;
+  }
+}
+
+@media screen and (min-width: 360px) {
+  body {
+    width: 360px;
+    overflow-x: hidden;
+  }
+}
+
+// Для средних девайсов
+@media screen and (min-width: 576px) {
+  body {
+    width: 576px;
+  }
+}
+
+@media screen and (min-width: 767px) {
+  body {
+    width: 767px;
+  }
+}
+
+// Для больших девайсов
+@media screen and (min-width: 968px) {
+  body {
+    width: 968px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  body {
+    width: 1024px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  body {
+    width: 1280px;
+  }
+}
+
+@media screen and (min-width: 1920px) {
+  body {
+    width: 1920px;
+  }
+}
