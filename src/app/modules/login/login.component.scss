@@ -1,0 +1,232 @@
+.login {
+  &__logo {
+    width: 3.75rem;
+    height: 3.75rem;
+    margin: 0 auto var(--mb-32) auto;
+  }
+
+  &__title {
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: var(--font-bold);
+    font-size: var(--h2-font-size);
+    margin-bottom: var(--mb-16);
+    letter-spacing: 0.125rem;
+  }
+
+  &__subtitle {
+    display: block;
+    text-align: center;
+    font-weight: var(--font-light);
+    font-size: var(--small-font-size);
+    margin-bottom: 1.5rem;
+  }
+
+  &__form {
+    &-inputs {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      row-gap: 0.625rem;
+
+      &_input {
+        position: relative;
+
+        &-icon {
+          position: absolute;
+          top: 0.125rem;
+          left: 0.125rem;
+          width: 2.375rem;
+          height: 2.375rem;
+          background-color: var(--white-color);
+          border-radius: 50%;
+          line-height: 2.5rem;
+          text-align: center;
+
+          i {
+            color: var(--accent-color);
+          }
+        }
+
+        input {
+          width: 17.188rem;
+          height: 2.625rem;
+          background-color: #f7f7f7;
+          border: none;
+          padding: 0.5rem 1rem 0.5rem 3rem;
+          border-radius: 3.125rem;
+          border: 0.125rem solid transparent;
+          outline: none;
+          transition: 0.3s ease-in-out;
+
+          &:focus {
+            border: 0.125rem solid var(--accent-color);
+          }
+        }
+      }
+    }
+
+    &-wrapper {
+      margin-top: var(--mb-16);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      &_checkbox {
+        label {
+          font-size: var(--smaller-font-size);
+          font-weight: var(--font-light);
+
+          input {
+            cursor: pointer;
+          }
+        }
+      }
+
+      &_reset-password {
+        font-size: var(--smaller-font-size);
+        transition: 0.3s ease-in-out;
+
+        &:hover {
+          color: var(--accent-color);
+        }
+      }
+    }
+
+    &-login {
+      &_btn {
+        margin-top: var(--mb-32);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 2.5rem;
+        font-size: var(--smaller-font-size);
+        font-weight: var(--font-light);
+        text-transform: uppercase;
+        color: var(--white-color);
+        background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+        background-size: 400% 400%;
+        background-color: transparent;
+        animation: gradient 7s ease-in-out infinite;
+        border-radius: 1.875rem;
+        opacity: 0.9;
+        transition: 0.3s ease-in-out;
+
+        &:hover {
+          box-shadow: 0.125rem 0.165rem 0.3rem 0 rgba(130, 36, 227, 0.5);
+          animation-play-state: paused;
+          opacity: 1;
+        }
+      }
+    }
+
+    &-register {
+      margin-top: var(--mb-16);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: var(--small-font-size);
+      letter-spacing: 0.094rem;
+      transition: 0.3s ease-in-out;
+
+      &:hover {
+        color: var(--accent-color);
+      }
+    }
+  }
+}
+
+// Стили для Чекбокса
+.checkbox {
+  --background: #fff;
+  --border: #d1d6ee;
+  --border-hover: #bbc1e1;
+  --border-active: var(--accent-color);
+  --tick: #fff;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 0.313rem;
+
+  input,
+  svg {
+    display: block;
+    width: 1.313rem;
+    height: 1.313rem;
+  }
+
+  input {
+    appearance: none;
+    position: relative;
+    outline: none;
+    background: var(--background);
+    border: none;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    border-radius: 0.25rem;
+    transition: box-shadow 0.3s;
+    box-shadow: inset 0 0 0 var(--s, 1px) var(--b, var(--border));
+
+    &:hover {
+      --s: 0.125rem;
+      --b: var(--border-hover);
+    }
+
+    &:checked {
+      --b: var(--border-active);
+    }
+  }
+
+  svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1.313rem;
+    height: 1.313rem;
+    pointer-events: none;
+    fill: none;
+    stroke-width: 0.125rem;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke: var(--stroke, var(--border-active));
+    transform: scale(var(--scale, 1)) translateZ(0);
+  }
+
+  &.path {
+    input {
+      &:checked {
+        --s: 0.125rem;
+        transition-delay: 0.4s;
+        & + svg {
+          --a: 16.1 86.12;
+          --o: 102.22;
+        }
+      }
+    }
+
+    svg {
+      stroke-dasharray: var(--a, 86.12);
+      stroke-dashoffset: var(--o, 86.12);
+      transition: stroke-dasharray 0.6s, stroke-dashoffset 0.6s;
+    }
+  }
+}
+
+// Анимация для инпута с логином
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
