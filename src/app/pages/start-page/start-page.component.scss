@@ -109,6 +109,12 @@
       padding: 4.375rem 3.125rem;
       color: var(--black-color);
       background-color: var(--white-color);
+
+      &_logo {
+        width: 3.75rem;
+        height: 3.75rem;
+        margin: 0 auto var(--mb-32) auto;
+      }
     }
   }
 
