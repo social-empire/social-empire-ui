@@ -24,7 +24,7 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [StartPageComponent],
-  imports: [CommonModule, RouterModule.forRoot(routes), LoginModule, RegistrationModule],
+  imports: [CommonModule, RouterModule.forChild(routes), LoginModule, RegistrationModule],
   exports: [StartPageComponent],
 })
 export class StartPageModule {}
