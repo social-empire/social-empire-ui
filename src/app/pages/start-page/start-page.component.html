@@ -61,13 +61,7 @@
             <img src="assets/short-logo.png" alt="Website Short Logo" />
           </div>
 
-          <ng-container *ngIf="checkUrl() === '/start-page/registration'; else login">
-            <social-empire-registration></social-empire-registration>
-          </ng-container>
-
-          <ng-template #login>
-            <social-empire-login></social-empire-login>
-          </ng-template>
+          <router-outlet></router-outlet>
         </div>
       </div>
 

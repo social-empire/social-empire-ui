@@ -5,11 +5,26 @@ import { LoginModule } from 'src/app/modules/login';
 import { RegistrationModule } from 'src/app/modules/registration';
 import { RouterModule, Routes } from '@angular/router';
 
-const routes: Routes = [{ path: '', component: StartPageComponent, pathMatch: 'full' }];
+const routes: Routes = [
+  {
+    path: 'start-page',
+    component: StartPageComponent,
+    children: [
+      {
+        path: '',
+        loadChildren: () => import('../../modules/login/login.module').then((m) => m.LoginModule),
+      },
+      {
+        path: 'registration',
+        loadChildren: () => import('../../modules/registration/registration.module').then((m) => m.RegistrationModule),
+      },
+    ],
+  },
+];
 
 @NgModule({
   declarations: [StartPageComponent],
-  imports: [CommonModule, RouterModule.forChild(routes), LoginModule, RegistrationModule],
+  imports: [CommonModule, RouterModule.forRoot(routes), LoginModule, RegistrationModule],
   exports: [StartPageComponent],
 })
 export class StartPageModule {}
