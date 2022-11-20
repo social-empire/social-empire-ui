@@ -5,6 +5,7 @@
 
   <form class="login__form">
     <div class="login__form-inputs">
+      <!-- TODO: Сделать логику запроса на сервер, есть ли такой пользователь или нет -->
       <!-- Первое поле для почты или логина -->
       <div class="login__form-inputs_input">
         <span class="login__form-inputs_input-icon">
@@ -14,6 +15,7 @@
         <input required type="text" placeholder="Почта / Логин" />
       </div>
 
+      <!-- TODO: Сделать логику запроса на сервер, подходит ли пароль для данного пользователя или нет -->
       <!-- Второе поле для пароля -->
       <div class="login__form-inputs_input">
         <span class="login__form-inputs_input-icon">
@@ -25,9 +27,10 @@
     </div>
 
     <div class="login__form-wrapper">
+      <!-- TODO: Сделать логику запоминания в браузере данных (если нужно, если не будет браузер сам предлагать их запоминать) -->
       <div class="login__form-wrapper_checkbox">
-        <label class="checkbox path" for="checkbox">
-          <input type="checkbox" id="checkbox" />
+        <label class="checkbox path" for="checkbox-login">
+          <input type="checkbox" id="checkbox-login" />
           <svg viewBox="0 0 21 21">
             <path
               d="M5,10.75 L8.5,14.25 L19.4,2.3 C18.8333333,1.43333333 18.0333333,1 17,1 L4,1 C2.35,1 1,2.35 1,4 L1,17 C1,18.65 2.35,20 4,20 L17,20 C18.65,20 20,18.65 20,17 L20,7.99769186"
@@ -37,9 +40,9 @@
         </label>
       </div>
 
+      <!-- TODO: Пофиксить проблему с тем, что при нажатии на данную кнопку высвечивается "Заполните это поле" у инпутов (привязка к форме) -->
       <div class="login__form-wrapper_reset-password">
-        <!-- TODO: Заменить ссылку по роутингу -->
-        <a routerLink="#" target="_blank">Забыли пароль?</a>
+        <button (click)="forgotPasswordModal.showDialog = true" class="login__form-wrapper_reset-password-btn">Забыли пароль?</button>
       </div>
     </div>
 
@@ -48,8 +51,7 @@
     </div>
 
     <div class="login__form-register">
-      <!-- TODO: Заменить ссылку по роутингу -->
-      <a routerLink="#" class="login__form-register_btn">Зарегистрироваться</a>
+      <a routerLink="/start-page/registration" class="login__form-register_btn">Зарегистрироваться</a>
     </div>
   </form>
 </div>
