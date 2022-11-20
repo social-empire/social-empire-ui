@@ -79,11 +79,16 @@
       }
 
       &_reset-password {
-        font-size: var(--smaller-font-size);
-        transition: 0.3s ease-in-out;
+        &-btn {
+          background-color: inherit;
+          font-size: var(--smaller-font-size);
+          text-transform: uppercase;
+          letter-spacing: 0.031rem;
+          transition: 0.3s ease-in-out;
 
-        &:hover {
-          color: var(--accent-color);
+          &:hover {
+            color: var(--accent-color);
+          }
         }
       }
     }
@@ -91,9 +96,6 @@
     &-login {
       &_btn {
         margin-top: var(--mb-32);
-        display: flex;
-        justify-content: center;
-        align-items: center;
         width: 100%;
         height: 2.5rem;
         font-size: var(--smaller-font-size);
@@ -109,7 +111,7 @@
         transition: 0.3s ease-in-out;
 
         &:hover {
-          box-shadow: 0.125rem 0.165rem 0.3rem 0 rgba(130, 36, 227, 0.5);
+          color: var(--black-color);
           animation-play-state: paused;
           opacity: 1;
         }
