@@ -4,6 +4,7 @@ import { StartPageComponent } from './start-page.component';
 import { LoginModule } from 'src/app/modules/login';
 import { RegistrationModule } from 'src/app/modules/registration';
 import { RouterModule, Routes } from '@angular/router';
+import { ForgotPasswordModalModule } from 'src/app/modules/login/components/forgot-password-modal';
 
 const routes: Routes = [
   {
@@ -24,7 +25,7 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [StartPageComponent],
-  imports: [CommonModule, RouterModule.forChild(routes), LoginModule, RegistrationModule],
+  imports: [CommonModule, RouterModule.forChild(routes), LoginModule, RegistrationModule, ForgotPasswordModalModule],
   exports: [StartPageComponent],
 })
 export class StartPageModule {}

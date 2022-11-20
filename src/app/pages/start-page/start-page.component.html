@@ -1,4 +1,11 @@
+<!-- TODO: Сделать закрытие модального окна по нажатию на пустое место на странице -->
 <section class="start-page">
+  <ng-container *ngIf="forgotPasswordModal.showDialog">
+    <div class="start-page__modal">
+      <social-empire-forgot-password-modal></social-empire-forgot-password-modal>
+    </div>
+  </ng-container>
+
   <div class="start-page__container">
     <div class="start-page__wrapper">
       <div class="start-page__logo">
