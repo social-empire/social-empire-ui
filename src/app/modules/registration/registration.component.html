@@ -3,6 +3,7 @@
 
   <span class="registration__subtitle">Зарегистрировать аккаунт Social Empire</span>
 
+  <!-- TODO: Сделать логику post-запроса на сервер, что пользователь отправляет свои данные для регистрации -->
   <form class="registration__form">
     <div class="registration__form-inputs">
       <!-- Первое поле для логина -->
@@ -23,6 +24,7 @@
         <input required type="password" placeholder="Пароль" />
       </div>
 
+      <!-- TODO: Сделать валидацию пароля + проверку схожести повторного пароля с основным -->
       <!-- Третье поле для повтора пароля -->
       <div class="registration__form-inputs_input">
         <span class="registration__form-inputs_input-icon">
@@ -44,6 +46,7 @@
     </div>
 
     <div class="registration__form-wrapper">
+      <!-- TODO: Сделать логику для рассылки и соглашения с политиками сервиса -->
       <div class="registration__form-wrapper_checkboxes">
         <label class="checkbox path" for="checkbox-subscribe">
           <input type="checkbox" id="checkbox-subscribe" />
@@ -72,8 +75,7 @@
     </div>
 
     <div class="registration__form-login">
-      <!-- TODO: Заменить ссылку по роутингу -->
-      <a routerLink="#" class="registration__form-login_btn">Войти в аккаунт</a>
+      <a routerLink="/start-page" class="registration__form-login_btn">Войти в аккаунт</a>
     </div>
   </form>
 </div>
