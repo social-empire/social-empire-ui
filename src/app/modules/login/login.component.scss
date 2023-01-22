@@ -43,6 +43,16 @@
           }
         }
 
+        &-validation {
+          margin: 0.25rem 0.5rem 0 0.5rem;
+
+          span {
+            font-size: calc(var(--smaller-font-size) - 15%);
+            font-weight: var(--font-medium);
+            color: rgba(229, 52, 52, 1);
+          }
+        }
+
         input {
           width: 17.188rem;
           height: 2.625rem;
@@ -56,6 +66,17 @@
 
           &:focus {
             border: 0.125rem solid var(--accent-color);
+          }
+
+          // Цветовая валидация инпутов
+          // Инпут не валиден
+          &.ng-invalid.ng-touched {
+            border: 0.125rem solid hsl(0, 77%, 55%);
+          }
+
+          // Инпут валиден
+          &.ng-valid.ng-touched {
+            border: 0.125rem solid hsl(125, 77%, 55%);
           }
         }
       }

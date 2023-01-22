@@ -1,18 +1,29 @@
 <div class="login__container">
-  <h2 class="login__title">Рады Видеть Вас!</h2>
+  <h2 class="login__title">Рады видеть вас!</h2>
 
   <span class="login__subtitle">Войти в аккаунт Social Empire</span>
 
-  <form class="login__form">
+  <form class="login__form" [formGroup]="loginForm" (ngSubmit)="submitLogin()">
     <div class="login__form-inputs">
+      <!-- TODO: Сделать валидаторы для формы, очистку формы при отправке, оповещения о заполнении и то же самое в компоненте registration -->
       <!-- TODO: Сделать логику запроса на сервер, есть ли такой пользователь или нет -->
-      <!-- Первое поле для почты или логина -->
+      <!-- Первое поле для почты -->
       <div class="login__form-inputs_input">
         <span class="login__form-inputs_input-icon">
           <i class="bx bx-user"></i>
         </span>
 
-        <input required type="text" placeholder="Почта / Логин" />
+        <input required type="text" placeholder="Почта" formControlName="email" />
+
+        <ng-container *ngIf="loginForm.get('email') as email">
+          <div *ngIf="email?.invalid && email?.touched" class="login__form-inputs_input-validation">
+            <ng-container *ngIf="email?.errors as emailErrors">
+              <span *ngIf="emailErrors?.['required']">Поле "Почта" не может быть пустым</span>
+
+              <span *ngIf="emailErrors?.['email']">Введите корректный адрес эл. почты</span>
+            </ng-container>
+          </div>
+        </ng-container>
       </div>
 
       <!-- TODO: Сделать логику запроса на сервер, подходит ли пароль для данного пользователя или нет -->
@@ -22,7 +33,13 @@
           <i class="bx bx-lock-open"></i>
         </span>
 
-        <input required type="password" placeholder="Пароль" />
+        <input required type="password" placeholder="Пароль" formControlName="password" />
+
+        <ng-container *ngIf="loginForm.get('password') as password">
+          <div *ngIf="password?.invalid && password?.touched" class="login__form-inputs_input-validation">
+            <span *ngIf="password?.errors?.['required']">Поле "Пароль" не может быть пустым</span>
+          </div>
+        </ng-container>
       </div>
     </div>
 
@@ -42,16 +59,18 @@
 
       <!-- TODO: Пофиксить проблему с тем, что при нажатии на данную кнопку высвечивается "Заполните это поле" у инпутов (привязка к форме) -->
       <div class="login__form-wrapper_reset-password">
-        <button (click)="forgotPasswordModal.showDialog = true" class="login__form-wrapper_reset-password-btn">Забыли пароль?</button>
+        <button (click)="forgotPasswordModal.showDialog = true" type="button" class="login__form-wrapper_reset-password-btn">
+          Забыли пароль?
+        </button>
       </div>
     </div>
 
     <div class="login__form-login">
-      <button class="login__form-login_btn">Войти в аккаунт</button>
+      <button class="login__form-login_btn" type="submit" [disabled]="loginForm.invalid">Войти в аккаунт</button>
     </div>
 
     <div class="login__form-register">
-      <a routerLink="/start-page/registration" class="login__form-register_btn">Зарегистрироваться</a>
+      <a routerLink="/start-page/registration" type="button" class="login__form-register_btn">Зарегистрироваться</a>
     </div>
   </form>
 </div>
