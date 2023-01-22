@@ -1,0 +1,70 @@
+.header {
+  position: fixed;
+  color: var(--white-color);
+  background-color: rgba(0, 0, 0, 0.8);
+  box-shadow: 0 0.25rem 1.875rem rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(0.313rem);
+
+  &__container {
+    margin: 0 12.5rem;
+    padding: 1.25rem;
+  }
+
+  &__nav {
+    display: grid;
+    grid-template-columns: 0.5fr 1fr 0.5fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: 'logo links rightMenu';
+    align-items: center;
+
+    &-logo {
+      grid-area: logo;
+
+      img {
+        width: 50%;
+        height: 50%;
+      }
+    }
+
+    &-links {
+      grid-area: links;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      column-gap: 2rem;
+
+      &_link {
+        transition: 0.3s ease-in-out;
+
+        &:hover {
+          color: var(--orange-color);
+        }
+      }
+    }
+
+    &-menu {
+      grid-area: rightMenu;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      column-gap: 0.75rem;
+
+      &_basket {
+        font-size: var(--h3-font-size);
+        transition: 0.3s ease-in-out;
+
+        &:hover {
+          color: var(--orange-color);
+        }
+      }
+
+      &_login {
+        transition: 0.3s ease-in-out;
+
+        &:hover {
+          color: var(--orange-color);
+        }
+      }
+    }
+  }
+}
